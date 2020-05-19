@@ -1,0 +1,468 @@
+<div class="row">
+
+</div>
+
+
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title">Select Data</h5>
+        <form #f="ngForm">
+            <div class="form-row">
+                <div class="col-md-4">
+                    <div class="position-relative form-group">
+                        <label for="exampleSelect">Date</label>
+                        <select name="date" id="exampleSelect" class="form-control" ngModel>
+                            <option *ngFor="let date of date_dic" value="{{date.value}}">{{date.key}}</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="position-relative form-group">
+                        <label for="exampleSelect">University</label>
+                        <select name="university" id="exampleSelect" class="form-control" ngModel>
+                            <option  *ngFor="let university of uni_list">{{university.toString()}}</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="position-relative form-group">
+                        <label for="exampleSelect">Event Type</label>
+                        <select name="type" id="exampleSelect" class="form-control" placeholder="please" ngModel>
+                            <option >Any</option>
+                            <option >Lecture</option>
+                            <option >Hachathon</option>
+                            <option >Student Support</option>
+                            <option >General Event</option>
+                            
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="position-relative form-group">
+                        <label for="exampleSelect">University Staff</label>
+                        <select name="uni_staff" id="exampleSelect" class="form-control" ngModel>
+                          <option  *ngFor="let university_staff of uni_staff_list" value={{university_staff.first_name}},{{university_staff.family_name}}>{{university_staff.first_name}} {{university_staff.family_name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="position-relative form-group">
+                        <label for="exampleSelect">IBM Staff</label>
+                        <select name="ibm_staff" id="exampleSelect" class="form-control" ngModel>
+                          <option  *ngFor="let ibm_staff of ibm_staff_list">{{ibm_staff.toString()}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- <div class="form-row">
+                   <fieldset class="position-relative form-group">
+                      <div class="position-relative form-check">
+                          <label class="form-check-label">
+                              <div class="main-card mb-3 card">
+                                      <h5 class="card-title">Card title</h5>
+                                      <br>
+                                      <br>
+                                      <img width="100%" src="/src/assets/images/dropdown-header/abstract1.jpg">
+                                  <div class="card-body">
+
+                                      <input name="radio1" type="radio" class="form-check-input">
+                                      Template one
+                                  </div>
+                              </div>
+
+                          </label>
+                      </div>
+
+                    <div class="position-relative form-check">
+                        <label class="form-check-label">
+                            <div class="main-card mb-3 card">
+                                    <h5 class="card-title">Card title</h5>
+                                    <br>
+                                    <br>
+                                    <img width="100%" src="/src/assets/images/dropdown-header/abstract1.jpg">
+                                <div class="card-body">
+
+                                    <input name="radio1" type="radio" class="form-check-input">
+                                    Template one
+                                </div>
+                            </div>
+
+                        </label>
+                    </div>
+                    <div class="position-relative form-check">
+                        <label class="form-check-label">
+                            <div class="main-card mb-3 card">
+                                    <h5 class="card-title">Card title</h5>
+                                    <br>
+                                    <br>
+                                    <img width="100%" src="/src/assets/images/dropdown-header/abstract1.jpg">
+                                <div class="card-body">
+
+                                    <input name="radio1" type="radio" class="form-check-input">
+                                    Template one
+                                </div>
+                            </div>
+
+                        </label>
+                    </div>
+
+                  </fieldset>
+
+              </div> -->
+            
+            </div>
+            <div class="card-header-tab card-header"><div class="btn-actions-pane-right">
+              <button (click)="onSubmit(f)" class="mt-2 btn btn-primary">Select Data</button>
+              <button (click)="makePdf()" class = 'mt-2 btn btn-success'>Generate Report</button>
+               
+                
+            </div></div>
+            
+            
+        </form>
+    </div>
+</div>
+
+<div class="mb-3 card">
+
+
+<div class="pt-4 card-body">
+  
+
+  
+ 
+ 
+</div>
+
+<div #content class="row" id="content">
+<div class="col-lg-12">
+  <div class="mb-3 card">
+      <div class="card-header-tab card-header">
+        <div class="card-header-title">
+          <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+          Requests
+        </div>
+     
+      </div>
+      <div class="container">
+      <div class="widget-chart p-0">
+        <apx-chart
+          [series]="[
+                  {
+                    name: 'University',
+                    type: 'column',
+                    data: this.uni_num
+                  }, {
+                    name: 'Request',
+                    type: 'area',
+                    data: this.req_num
+                  }, {
+                    name: 'Staff',
+                    type: 'line',
+                    data: this.user_num
+                  }
+                ]"
+          [chart]="{
+                  height: '350',
+                  type: 'line',
+                  stacked: false
+                }"
+          [stroke]="{
+                  width: [0, 2, 5],
+                  curve: 'smooth'
+                }"
+          [plotOptions]="{
+                  bar: {
+                    columnWidth: '50%'
+                  }
+                }"
+          [fill]="{
+                  opacity: [0.85, 0.25, 1],
+                  gradient: {
+                    inverseColors: false,
+                    shade: 'light',
+                    type: 'vertical',
+                    opacityFrom: 0.85,
+                    opacityTo: 0.55,
+                    stops: [0, 100, 100, 100]
+                    }
+                }"
+
+          [labels]="this.date"
+
+         
+          [yaxis]="{
+                  title: {
+                    text: 'Number'
+                  },
+                  min: 0
+                }"
+
+        ></apx-chart>
+        
+      </div>
+    </div>
+    <div class="container">
+      <div class="pt-2 card-body">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-primary border-primary card">
+                    <div class="widget-chat-wrapper-outer">
+                      <div class="widget-chart-content">
+                        <div class="widget-title opacity-5 text-uppercase">Lecture</div>
+                        <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                          <div class="widget-chart-flex align-items-center">
+                            <div>
+                              
+                              {{this.lecture}}
+                              
+                            </div>
+                            <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                              <div class="circle-progress">
+                                <div class="progress-circle-wrapper">
+                                  <div class="round-progress-text">
+                                    <span>{{(this.lecture/this.total*100).toFixed(1)}}%</span>
+                                    <round-progress
+                                      [current]="this.lecture/this.total*100"
+                                      [max]="100"
+                                      [color]="'#52c44f'"
+                                      [background]="'#f0f0f0'"
+                                      [radius]="62"
+                                      [stroke]="6"
+                                      [semicircle]="false"
+                                      [rounded]="true"
+                                      [clockwise]="false"
+                                      [responsive]="true"
+                                      [duration]="1400"
+                                      [animation]="'easeInOutQuart'"
+                                      [animationDelay]="0"></round-progress>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-danger border-danger card">
+                    <div class="widget-chat-wrapper-outer">
+                      <div class="widget-chart-content">
+                        <div class="widget-title opacity-5 text-uppercase">Student Support</div>
+                        <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                          <div class="widget-chart-flex align-items-center">
+                            <div>
+                                                   
+                              {{this.student_support}}
+                              
+                            </div>
+                            <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                              <div class="progress-circle-wrapper">
+                                <div class="round-progress-text">
+                                  <span>{{(this.student_support/this.total*100).toFixed(1)}}%</span>
+                                  <round-progress
+                                    [current]="this.student_support/this.total*100"
+                                    [max]="100"
+                                    [color]="'#cc603c'"
+                                    [background]="'#f0f0f0'"
+                                    [radius]="62"
+                                    [stroke]="6"
+                                    [semicircle]="false"
+                                    [rounded]="true"
+                                    [clockwise]="false"
+                                    [responsive]="true"
+                                    [duration]="1400"
+                                    [animation]="'easeInOutQuart'"
+                                    [animationDelay]="0"></round-progress>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-warning border-warning card">
+                    <div class="widget-chat-wrapper-outer">
+                      <div class="widget-chart-content">
+                        <div class="widget-title opacity-5 text-uppercase">Hachathon</div>
+                        <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                          <div class="widget-chart-flex align-items-center">
+                            <div>
+                             
+                              {{this.hachathon}}
+                            </div>
+                            <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                              <div class="progress-circle-wrapper">
+                                <div class="round-progress-text">
+                                  <span>{{(this.hachathon/this.total*100).toFixed(1)}}%</span>
+                                  <round-progress
+                                    [current]="this.hachathon/this.total*100"
+                                    [max]="100"
+                                    [color]="'#6bbdcc'"
+                                    [background]="'#f0f0f0'"
+                                    [radius]="62"
+                                    [stroke]="6"
+                                    [semicircle]="false"
+                                    [rounded]="true"
+                                    [clockwise]="false"
+                                    [responsive]="true"
+                                    [duration]="1400"
+                                    [animation]="'easeInOutQuart'"
+                                    [animationDelay]="0"></round-progress>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-success border-success card">
+                    <div class="widget-chat-wrapper-outer">
+                      <div class="widget-chart-content">
+                        <div class="widget-title opacity-5 text-uppercase">General Event</div>
+                        <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                          <div class="widget-chart-flex align-items-center">
+                            <div>
+                              {{this.general_events}}
+                              <!-- {{this.general_events}} -->
+                              
+                            </div>
+                            <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                              <div class="progress-circle-wrapper">
+                                <div class="round-progress-text">
+                                  <span>{{(this.general_events/this.total*100).toFixed(1)}}%</span>
+                                  <round-progress
+                                    [current]="this.general_events/this.total*100"
+                                    [max]="100"
+                                    [color]="'#aacc3e'"
+                                    [background]="'#f0f0f0'"
+                                    [radius]="62"
+                                    [stroke]="6"
+                                    [semicircle]="false"
+                                    [rounded]="true"
+                                    [clockwise]="false"
+                                    [responsive]="true"
+                                    [duration]="1400"
+                                    [animation]="'easeInOutQuart'"
+                                    [animationDelay]="0"></round-progress>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+ 
+    <div class="container">
+
+
+  </div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+    
+
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+     
+      <div class="container">
+<div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container">
+      </div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"><p>
+      </p></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"><p>
+      </p></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container">
+      </div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container">
+      </div>
+
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container">
+      </div>
+
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container">
+      </div>
+
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container">
+      </div>
+
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container">
+      </div>
+
+
+
+
+      </div>
+      <div class="container">
+</div>
+    </div>
+</div>
+
+</div>
+
+
+

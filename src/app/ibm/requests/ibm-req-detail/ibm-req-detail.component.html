@@ -1,0 +1,123 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+              <div class="position-relative form-group">
+                  <label for="exampleAddress">State</label>
+                  <input name="address" id="exampleAddress" placeholder={{this.state}} type="text" disabled="disabled" class="form-control">
+              </div>
+              <div class="position-relative form-group">
+                <label for="exampleAddress">Handled by</label>
+                <input name="address" id="exampleAddress" placeholder={{this.ibm_staff}} type="text" disabled="disabled" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <h5 class="card-title">Proposer Information</h5>
+                <form>
+                    <div class="position-relative form-group">
+                        <label for="exampleAddress">First Name</label>
+                        <input name="address" id="exampleAddress" placeholder="{{this.first_name}}" type="Alex" disabled="disabled" class="form-control">
+                    </div>
+                    <div class="position-relative form-group">
+                        <label for="exampleAddress">Family Name</label>
+                        <input name="address" id="exampleAddress" placeholder="{{this.family_name}}" type="Alex" disabled="disabled" class="form-control">
+                    </div>
+                    <div class="position-relative form-group">
+                        <label for="exampleAddress">Phone</label>
+                        <input name="address" id="exampleAddress" placeholder="{{this.phone}}" type="Alex" disabled="disabled" class="form-control">
+                    </div>
+                    <div class="position-relative form-group">
+                        <label for="exampleAddress">Email</label>
+                        <input name="address" id="exampleAddress" placeholder="{{this.email}}" type="Alex" disabled="disabled" class="form-control">
+                    </div>
+                    <div class="position-relative form-group">
+                        <label for="exampleAddress">Job Name</label>
+                        <input name="address" id="exampleAddress" placeholder="{{this.job_title}}" type="Alex" disabled="disabled" class="form-control">
+                    </div>
+                    <div class="position-relative form-group">
+                        <label for="exampleAddress">University</label>
+                        <input name="address" id="exampleAddress" placeholder="{{this.university}}" type="Alex" disabled="disabled" class="form-control">
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
+        <div class="col-md-6">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Event Infomation</h5>
+                    <form>
+
+                        <div class="position-relative form-group">
+                            <label for="exampleAddress">Event Type</label>
+                            <input name="type" id="type" placeholder="{{this.type}}" type="Alex" disabled="disabled" class="form-control">
+                        </div>
+                       
+                                <div class="position-relative form-group">
+                                    <label for="exampleCity">Start Time</label>
+                                    <input class="form-control" id="exampleCity" name="city" placeholder="{{this.start}}" disabled="disabled" type="text">
+
+                                </div>
+                           
+                                <div class="position-relative form-group">
+                                    <label for="exampleState">End Time</label>
+                                    <input class="form-control" id="exampleState" name="state" placeholder="{{this.end}}" disabled="disabled" type="text">
+
+                                </div>
+                        
+                        <div class="position-relative form-group">
+                            <label for="exampleAddress">Number of Participants</label>
+                            <input name="address" id="exampleAddress" placeholder="{{this.participant}}" type="Alex" disabled="disabled" class="form-control">
+                        </div>
+                        <div class="position-relative form-group">
+                            <label for="exampleAddress">Address Line 1</label>
+                            <input name="address" id="exampleAddress" placeholder="{{this.address1}}" type="Alex" disabled="disabled" class="form-control">
+                        </div>
+                        <div class="position-relative form-group">
+                            <label for="exampleAddress">Address Line 2</label>
+                            <input name="address" id="exampleAddress" placeholder="{{this.address2}}" type="Alex" disabled="disabled" class="form-control">
+                        </div>
+                        <div class="position-relative form-group">
+                            <label for="exampleAddress">Address Line 3</label>
+                            <input name="address" id="exampleAddress" placeholder="{{this.address3}}" type="Alex" disabled="disabled" class="form-control">
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="exampleCity">Post code</label>
+                                    <input class="form-control" id="exampleCity" name="city" placeholder="{{this.postcode}}" disabled="disabled" type="text">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="exampleState">City</label>
+                                    <input class="form-control" id="exampleState" name="state" placeholder="{{this.town}}" disabled="disabled" type="text">
+
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="position-relative form-group">
+                                    <label for="exampleZip">Town</label>
+                                    <input class="form-control" id="exampleZip" name="zip" placeholder="{{this.town}}" disabled="disabled" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="d-block text-right card-footer">
+                    <button class="mr-2 btn btn-link btn-sm">
+                      <a routerLinkActive="active-item" routerLink="/ibm/requests" class="vsm-link">Back</a>
+                      </button>
+     
+                    <button (click)="deny()" class="btn btn-danger btn-lg">Deny   </button>
+                    <button (click)="confirm()" class="btn btn-success btn-lg">Confirm</button>
+                </div>
+            </div>
+        </div>
+        </div>

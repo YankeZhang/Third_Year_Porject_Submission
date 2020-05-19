@@ -1,0 +1,30 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<div class="card main-card mb-3">
+  
+  <div class="card-body">
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile><a routerLinkActive="active-item" routerLink="/forms/sticky-headers" class="vsm-link"><div class="font-icon-wrapper"><i aria-hidden="true" class="fa fa-fw" title="bank"></i><p>Book A Hachathon</p></div></a></mat-grid-tile>
+      <!-- <mat-grid-tile><a routerLinkActive="active-item" routerLink="/forms/sticky-headers" class="vsm-link"><i aria-hidden="true" class="fa fa-fw" title="bank"></i></a>Book An Event</mat-grid-tile> -->
+      <mat-grid-tile><a routerLinkActive="active-item" routerLink="/forms/sticky-headers" class="vsm-link"><div class="font-icon-wrapper"><i aria-hidden="true" class="fa fa-fw" title="code"></i><p>Book A Hachathon</p></div></a></mat-grid-tile>
+      <mat-grid-tile><a routerLinkActive="active-item" routerLink="/forms/sticky-headers" class="vsm-link"><div class="font-icon-wrapper"><i aria-hidden="true" class="fa fa-fw" title="book"></i><p>Book A Lecture</p></div></a></mat-grid-tile>
+      <mat-grid-tile><a routerLinkActive="active-item" routerLink="/forms/sticky-headers" class="vsm-link"><div class="font-icon-wrapper"><i aria-hidden="true" class="fa fa-fw" title="handshake-o"></i><p>Book a Support</p></div></a></mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+<!-- <div class="card main-card mb-3">
+  <div class="card-header">
+    Dynamic Grid List
+  </div>
+  <div class="card-body">
+    <mat-grid-list cols="4" rowHeight="100px">
+      <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+        {{tile.text}}
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div> -->

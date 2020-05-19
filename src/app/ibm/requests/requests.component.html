@@ -1,0 +1,97 @@
+<div class="card mb-3">
+    <div class="card-header-tab card-header">
+        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+            <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i> Requests
+        </div>
+        <div class="btn-actions-pane-right">
+
+            <button (click)="refresh()"class="btn-shadow btn btn-dark">Refresh</button>
+
+        </div>
+    </div>
+    <form>
+        <div class="p-2">
+            <div class="form-group form-inline mb-0">
+                Search:
+                <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="service.searchTerm" />
+                <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span>
+                <div class="btn-actions-pane-right">
+
+                
+              </div>
+            </div>
+           
+            
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">id</th>
+                    <th scope="col" sortable="date" (sort)="onSort($event)">Date</th>
+                    <th scope="col" sortable="name" (sort)="onSort($event)">Name</th>
+                    <th scope="col" sortable="university" (sort)="onSort($event)">University</th>
+                    <th scope="col" sortable="type" (sort)="onSort($event)">Type</th>
+                    <th scope="col" sortable="topic" (sort)="onSort($event)">Topic</th>
+                    <th scope="col" sortable="state" (sort)="onSort($event)">State</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let request of requests$ | async">
+                    <th scope="row" class="text-center">
+                        <a routerLinkActive="active-item" routerLink="/ibm/req-detail" class="vsm-link"> 
+          {{ request.id }}
+        </a></th>
+
+                    <td>
+                        <a routerLinkActive="active-item" routerLink="/ibm/req-detail" [queryParams]="{id:request.real_id}" class="vsm-link">
+
+                            <ngb-highlight [result]="request.date" [term]="service.searchTerm"></ngb-highlight>
+                        </a>
+                    </td>
+                    <td>
+                        <a routerLinkActive="active-item" routerLink="/ibm/req-detail" [queryParams]="{id:request.real_id}" class="vsm-link">
+                            <ngb-highlight [result]="request.name" [term]="service.searchTerm"></ngb-highlight>
+                        </a>
+                    </td>
+                    <td>
+                        <a routerLinkActive="active-item" routerLink="/ibm/req-detail" [queryParams]="{id:request.real_id}" class="vsm-link">
+                            <ngb-highlight [result]="request.university" [term]="service.searchTerm"></ngb-highlight>
+                        </a>
+                    </td>
+                    <td>
+                        <a routerLinkActive="active-item" routerLink="/ibm/req-detail" [queryParams]="{id:request.real_id}" class="vsm-link">
+                            <ngb-highlight [result]="request.type" [term]="service.searchTerm"></ngb-highlight>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a routerLinkActive="active-item" routerLink="/ibm/req-detail" [queryParams]="{id:request.real_id}" class="vsm-link">
+                            <ngb-highlight [result]="request.topic" [term]="service.searchTerm"></ngb-highlight>
+                        </a>
+                    </td>
+                    <td>
+                        <a routerLinkActive="active-item" routerLink="/ibm/req-detail" [queryParams]="{id:request.real_id}" class="vsm-link">
+                            <ngb-highlight [result]="request.state" [term]="service.searchTerm"></ngb-highlight>
+                        </a>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="card-footer pb-0">
+            <div class="d-flex w-100 justify-content-between">
+                <ngb-pagination [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+                </ngb-pagination>
+                <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+                    <option [ngValue]="10">10 items per page</option>
+                    <option [ngValue]="20">20 items per page</option>
+                    <option [ngValue]="30">30 items per page</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>

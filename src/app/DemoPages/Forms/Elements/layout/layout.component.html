@@ -1,0 +1,218 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title">Select Data</h5>
+        <form>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <div class="position-relative form-group">
+                        <label for="exampleSelect">Date</label>
+                        <select name="select" id="exampleSelect" class="form-control">
+                            <option value="0">in 3 days</option>
+                            <option value="1">in 1 week</option>
+                            <option value="2">in 1 month</option>
+                            <option value="3">in 3 months</option>
+                            <option value="4">in 6 months</option>
+                            <option value="3">in 1 year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="position-relative form-group">
+                        <label for="exampleSelect">University</label>
+                        <select name="select" id="exampleSelect" class="form-control">
+                            <option value="default">Any</option>
+                            <option value="0">University College London</option>
+                            <option value="1">Kings College</option>
+                            <option value="2">Imperial College</option>
+                            <option value="3">SOAS</option>
+                            <option value="4">Birkbeck College</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="position-relative form-group">
+                        <label for="exampleSelect">Event Type</label>
+                        <select name="select" id="exampleSelect" class="form-control">
+                            <option value="default">Any</option>
+                            <option value="0">Lecture</option>
+                            <option value="1">Hachathon</option>
+                            <option value="2">Support</option>
+                            <option value="3">General Event</option>
+                            <option value="4">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="position-relative form-group">
+                        <label for="exampleSelect">University Staff</label>
+                        <select name="select" id="exampleSelect" class="form-control">
+                            <option value="default">Any</option>
+                            <option value="0">Tom Jeff</option>
+                            <option value="1">Jack Morison</option>
+                            <option value="2">John Doe</option>
+                            <option value="3">Yanke Zhang</option>
+                            <option value="4">Ana Pham</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="position-relative form-group">
+                        <label for="exampleSelect">IBM Staff</label>
+                        <select name="select" id="exampleSelect" class="form-control">
+                            <option value="default">Any</option>
+                            <option value="0">Tom Jeff</option>
+                            <option value="1">Jack Morison</option>
+                            <option value="2">John Doe</option>
+                            <option value="3">Yanke Zhang</option>
+                            <option value="4">Ana Pham</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- <div class="form-row">
+                   <fieldset class="position-relative form-group">
+                      <div class="position-relative form-check">
+                          <label class="form-check-label">
+                              <div class="main-card mb-3 card">
+                                      <h5 class="card-title">Card title</h5>
+                                      <br>
+                                      <br>
+                                      <img width="100%" src="/src/assets/images/dropdown-header/abstract1.jpg">
+                                  <div class="card-body">
+
+                                      <input name="radio1" type="radio" class="form-check-input">
+                                      Template one
+                                  </div>
+                              </div>
+
+                          </label>
+                      </div>
+
+                    <div class="position-relative form-check">
+                        <label class="form-check-label">
+                            <div class="main-card mb-3 card">
+                                    <h5 class="card-title">Card title</h5>
+                                    <br>
+                                    <br>
+                                    <img width="100%" src="/src/assets/images/dropdown-header/abstract1.jpg">
+                                <div class="card-body">
+
+                                    <input name="radio1" type="radio" class="form-check-input">
+                                    Template one
+                                </div>
+                            </div>
+
+                        </label>
+                    </div>
+                    <div class="position-relative form-check">
+                        <label class="form-check-label">
+                            <div class="main-card mb-3 card">
+                                    <h5 class="card-title">Card title</h5>
+                                    <br>
+                                    <br>
+                                    <img width="100%" src="/src/assets/images/dropdown-header/abstract1.jpg">
+                                <div class="card-body">
+
+                                    <input name="radio1" type="radio" class="form-check-input">
+                                    Template one
+                                </div>
+                            </div>
+
+                        </label>
+                    </div>
+
+                  </fieldset>
+
+              </div> -->
+                <div class="form-row">
+                    <mat-radio-group [labelPosition]="labelPosition">
+                        <mat-radio-button value="one">
+                            <div class="main-card mb-4 card">
+                                <br>
+                                <br>
+                                <img width="100%" src="./assets/images/dropdown-header/abstract1.jpg">
+                                <div class="card-body">
+
+                                    Template one
+                                </div>
+                            </div>
+                        </mat-radio-button>
+                        <mat-radio-button value="two">
+                            <div class="main-card mb-4 card">
+                                <br>
+                                <br>
+                                <img width="100%" src="./assets/images/dropdown-header/abstract1.jpg">
+                                <div class="card-body">
+
+                                    Template two
+                                </div>
+                            </div>
+                        </mat-radio-button>
+                        <mat-radio-button value="three">
+                            <div class="main-card mb-4 card">
+                                <br>
+                                <br>
+                                <img width="100%" src="./assets/images/dropdown-header/abstract1.jpg">
+                                <div class="card-body">
+
+                                    Template three
+                                </div>
+                            </div>
+                        </mat-radio-button>
+
+                    </mat-radio-group>
+                </div>
+            </div>
+
+            <button class="mt-2 btn btn-primary">Generate</button>
+        </form>
+    </div>
+</div>
+<!-- <div class="main-card mb-3 card">
+        <div class="card-body"><h5 class="card-title">Inline</h5>
+          <div>
+            <form class="form-inline">
+              <div class="mb-2 mr-sm-2 mb-sm-0 position-relative form-group"><label for="exampleEmail22"
+                                                                                    class="mr-sm-2">Email</label><input
+                name="email" id="exampleEmail22" placeholder="something@idk.cool" type="email" class="form-control">
+              </div>
+              <div class="mb-2 mr-sm-2 mb-sm-0 position-relative form-group"><label for="examplePassword22"
+                                                                                    class="mr-sm-2">Password</label><input
+                name="password" id="examplePassword22" placeholder="don't tell!" type="password" class="form-control">
+              </div>
+              <button class="btn btn-primary">Submit</button>
+            </form>
+            <div class="divider"></div>
+            <form>
+              <div class="position-relative form-check form-check-inline"><label class="form-check-label"><input
+                type="checkbox" class="form-check-input"> Some input</label></div>
+              <div class="position-relative form-check form-check-inline"><label class="form-check-label"><input
+                type="checkbox" class="form-check-input"> Some other input</label></div>
+            </form>
+            <div class="divider"></div>
+            <form class="form-inline">
+              <div class="position-relative form-group"><label for="exampleEmail33"
+                                                               class="sr-only">Email</label><input name="email"
+                                                                                                   id="exampleEmail33"
+                                                                                                   placeholder="Email"
+                                                                                                   type="email"
+                                                                                                   class="mr-2 form-control">
+              </div>
+              <div class="position-relative form-group"><label for="examplePassword44"
+                                                               class="sr-only">Password</label><input name="password"
+                                                                                                      id="examplePassword44"
+                                                                                                      placeholder="Password"
+                                                                                                      type="password"
+                                                                                                      class="mr-2 form-control">
+              </div>
+              <button class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+     -->

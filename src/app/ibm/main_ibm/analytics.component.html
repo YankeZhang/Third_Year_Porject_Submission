@@ -1,0 +1,498 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+<div class="row">
+  <div class="col-md-6 col-xl-3">
+      <div class="card mb-3 widget-content bg-happy-green">
+          <div class="widget-content-wrapper text-white">
+              <div class="widget-content-left">
+                  <div class="widget-heading">This week</div>
+              </div>
+              <div class="widget-content-right">
+                  <div class="widget-numbers text-white"><span>{{this.thisWeek}}</span></div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+      <div class="card mb-3 widget-content bg-premium-dark">
+          <div class="widget-content-wrapper text-white">
+              <div class="widget-content-left">
+                  <div class="widget-heading">This month</div>
+                  
+              </div>
+              <div class="widget-content-right">
+                  <div class="widget-numbers text-warning"><span>{{this.thisMonth}}</span></div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+      <div class="card mb-3 widget-content bg-night-fade">
+          <div class="widget-content-wrapper text-white">
+              <div class="widget-content-left">
+                  <div class="widget-heading">Total Members</div>
+                  <div class="widget-subheading"></div>
+              </div>
+              <div class="widget-content-right">
+                  <div class="widget-numbers text-white"><span>{{this.totalMember}}</span></div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+      <div class="card mb-3 widget-content bg-arielle-smile">
+          <div class="widget-content-wrapper text-white">
+              <div class="widget-content-left">
+                  <div class="widget-heading">Universities</div>
+                  <div class="widget-subheading"></div>
+              </div>
+              <div class="widget-content-right">
+                  <div class="widget-numbers text-white"><span>{{this.universities}}</span></div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-xl-12">
+    <div class="row">
+        <div class="col-md-6 col-lg-3 col-xl-3">
+            <div class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-warning border-warning">
+                <div class="widget-chat-wrapper-outer">
+                    <div class="widget-chart-content pt-3 pl-3 pb-1">
+                        <div class="widget-chart-flex">
+                            <div class="widget-numbers">
+                                <div class="widget-chart-flex">
+                                    <div class="fsize-4">
+
+                                        <span>{{this.thisWeek}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="widget-subheading mb-0 opacity-5">This week</h6></div>
+                    <div class="no-gutters widget-chart-wrapper mt-3 mb-3 pl-2 he-auto row">
+                        <div class="col-md-9">
+                            <ngx-trend height="80" strokeLinecap="round" stroke="var(--warning)" strokeWidth="4" smooth="true" radius="15" [data]=this.req_num autoDraw="true" autoDrawDuration="1500" autoDrawEasing="ease-in"></ngx-trend>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 col-xl-3">
+            <div class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-danger border-danger">
+                <div class="widget-chat-wrapper-outer">
+                    <div class="widget-chart-content pt-3 pl-3 pb-1">
+                        <div class="widget-chart-flex">
+                            <div class="widget-numbers">
+                                <div class="widget-chart-flex">
+                                    <div class="fsize-4">
+
+                                        <span>{{this.thisMonth}}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="widget-subheading mb-0 opacity-5">This month</h6></div>
+                    <div class="no-gutters widget-chart-wrapper mt-3 mb-3 pl-2 he-auto row">
+                        <div class="col-md-9">
+                            <ngx-trend height="80" strokeLinecap="round" stroke="var(--danger)" strokeWidth="4" smooth="true" radius="15" [data]="req_num" autoDraw="true" autoDrawDuration="1500" autoDrawEasing="ease-in"></ngx-trend>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 col-xl-3">
+            <div class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-success border-success">
+                <div class="widget-chat-wrapper-outer">
+                    <div class="widget-chart-content pt-3 pl-3 pb-1">
+                        <div class="widget-chart-flex">
+                            <div class="widget-numbers">
+                                <div class="widget-chart-flex">
+                                    <div class="fsize-4">
+
+                                        <span>{{this.totalMember}}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="widget-subheading mb-0 opacity-5">Members</h6></div>
+                    <div class="no-gutters widget-chart-wrapper mt-3 mb-3 pl-2 he-auto row">
+                        <div class="col-md-9">
+                            <ngx-trend height="80" strokeLinecap="round" stroke="var(--success)" strokeWidth="4" smooth="true" radius="15" [data]=this.user_num autoDraw="true" autoDrawDuration="1500" autoDrawEasing="ease-in"></ngx-trend>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 col-xl-3">
+            <div class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-primary border-primary">
+                <div class="widget-chat-wrapper-outer">
+                    <div class="widget-chart-content pt-3 pl-3 pb-1">
+                        <div class="widget-chart-flex">
+                            <div class="widget-numbers">
+                                <div class="widget-chart-flex">
+                                    <div class="fsize-4">
+
+                                        <span>{{this.universities}}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="widget-subheading mb-0 opacity-5">Universities</h6></div>
+                    <div class="no-gutters widget-chart-wrapper mt-3 mb-3 pl-2 he-auto row">
+                        <div class="col-md-9">
+                            <ngx-trend height="80" strokeLinecap="round" stroke="var(--primary)" strokeWidth="4" smooth="true" radius="15" [data]="this.uni_num" autoDraw="true" autoDrawDuration="1500" autoDrawEasing="ease-in"></ngx-trend>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <div class="col-lg-12">
+        <div class="main-card mb-3 card">
+            <div class="rm-border card-header">
+              <div>
+                <h5 class="menu-header-title text-capitalize text-primary">Top Universities</h5>
+              </div>
+            </div>
+            <apx-chart
+              [series]="[
+                        {
+                          name: 'Request',
+                          data: this.req_list
+                        }, {
+                          name: 'Staff',
+                          data: this.staff_list
+                        }
+                      ]"
+              [chart]="{
+                        height: '420',
+                        type: 'bar'
+                      }"
+              [stroke]="{
+                        show: true,
+                        width: 2,
+                        colors: ['transparent']
+                      }"
+              [plotOptions]="{
+                        bar: {
+                          horizontal: false,
+                          endingShape: 'rounded',
+                          columnWidth: '55%'
+                        }
+                      }"
+      
+              [dataLabels]="{
+                        enabled: false
+                      }"
+      
+              [labels]="this.uni_list"
+      
+              [xaxis]="{
+                        categories: this.uni_list
+                      }"
+              [yaxis]="
+              { 
+              title: {
+                text: 'Number'
+              }
+            }
+          "
+              
+      
+              [fill]="{
+                        opacity: 1
+                      }"
+            ></apx-chart>
+          
+          </div>
+    </div>
+    <!-- <div class="col-lg-3">
+        <div class="main-card mb-2 card">
+            <div class="card-body">
+
+                <table class="mb-0 table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                <a routerLinkActive="active-item" routerLink="/forms/sticky-headers" class="vsm-link">Type</a></th>
+                            <th>Request</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <th scope="row">Lecture</th>
+                            <td>65</td>
+
+                        </tr>
+                        <tr>
+
+                            <th scope="row">Hachathon</th>
+                            <td>60</td>
+
+                        </tr>
+                        <tr>
+
+                            <th scope="row">Support</th>
+                            <td>42</td>
+
+                        </tr>
+                        <tr>
+
+                            <th scope="row">General Event</th>
+                            <td>40</td>
+
+                        </tr>
+                        <tr>
+
+                            <th scope="row">Other</th>
+                            <td>5</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div> -->
+    <div class="col-lg-12">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header">
+              <div class="card-header-title">
+                <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                Requests
+              </div>
+              <div class="btn-actions-pane-right">
+                
+                <button class="btn-wide btn-shadow btn btn-primary btn-sm">View All</button>
+              </div>
+            </div>
+            <div class="widget-chart p-0">
+              <apx-chart
+              [series]="[
+                      {
+                        name: 'University',
+                        type: 'column',
+                        data: this.uni_num
+                      }, {
+                        name: 'Request',
+                        type: 'area',
+                        data: this.req_num
+                      }, {
+                        name: 'Staff',
+                        type: 'line',
+                        data: this.user_num
+                      }
+                    ]"
+              [chart]="{
+                      height: '350',
+                      type: 'line',
+                      stacked: false
+                    }"
+              [stroke]="{
+                      width: [0, 2, 7],
+                      curve: 'smooth'
+                    }"
+              [plotOptions]="{
+                      bar: {
+                        columnWidth: '50%'
+                      }
+                    }"
+              [fill]="{
+                opacity: [0.85, 0.25, 1],
+                gradient: {
+                  inverseColors: false,
+                  shade: 'light',
+                  type: 'vertical',
+                  opacityFrom: 0.85,
+                  opacityTo: 0.55,
+                  stops: [0, 100, 100, 100]
+                  }
+                    }"
+    
+              [labels]="date"
+    
+               
+              [yaxis]="{
+                      title: {
+                        text: 'Number'
+                      },
+                      min: 0
+                    }"
+    
+            ></apx-chart>
+              
+            </div>
+            <div class="pt-2 card-body">
+              <div class="row">
+                <div class="col-md-6">
+                    <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-primary border-primary card">
+                      <div class="widget-chat-wrapper-outer">
+                        <div class="widget-chart-content">
+                          <div class="widget-title opacity-5 text-uppercase">Lecture</div>
+                          <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                            <div class="widget-chart-flex align-items-center">
+                              <div>
+                                
+                                {{this.lecture}}
+                                
+                              </div>
+                              <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                                <div class="circle-progress">
+                                  <div class="progress-circle-wrapper">
+                                    <div class="round-progress-text">
+                                      <span>{{(this.lecture/this.total*100).toFixed(1)}}%</span>
+                                      <round-progress
+                                        [current]="this.lecture/this.total*100"
+                                        [max]="100"
+                                        [color]="'#52c44f'"
+                                        [background]="'#f0f0f0'"
+                                        [radius]="62"
+                                        [stroke]="6"
+                                        [semicircle]="false"
+                                        [rounded]="true"
+                                        [clockwise]="false"
+                                        [responsive]="true"
+                                        [duration]="1400"
+                                        [animation]="'easeInOutQuart'"
+                                        [animationDelay]="0"></round-progress>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-danger border-danger card">
+                      <div class="widget-chat-wrapper-outer">
+                        <div class="widget-chart-content">
+                          <div class="widget-title opacity-5 text-uppercase">Student Support</div>
+                          <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                            <div class="widget-chart-flex align-items-center">
+                              <div>
+                                                     
+                                {{this.student_support}}
+                                
+                              </div>
+                              <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                                <div class="progress-circle-wrapper">
+                                  <div class="round-progress-text">
+                                    <span>{{(this.student_support/this.total*100).toFixed(1)}}%</span>
+                                    <round-progress
+                                      [current]="this.student_support/this.total*100"
+                                      [max]="100"
+                                      [color]="'#cc603c'"
+                                      [background]="'#f0f0f0'"
+                                      [radius]="62"
+                                      [stroke]="6"
+                                      [semicircle]="false"
+                                      [rounded]="true"
+                                      [clockwise]="false"
+                                      [responsive]="true"
+                                      [duration]="1400"
+                                      [animation]="'easeInOutQuart'"
+                                      [animationDelay]="0"></round-progress>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-warning border-warning card">
+                      <div class="widget-chat-wrapper-outer">
+                        <div class="widget-chart-content">
+                          <div class="widget-title opacity-5 text-uppercase">Hachathon</div>
+                          <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                            <div class="widget-chart-flex align-items-center">
+                              <div>
+                               
+                                {{this.hachathon}}
+                              </div>
+                              <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                                <div class="progress-circle-wrapper">
+                                  <div class="round-progress-text">
+                                    <span>{{(this.hachathon/this.total*100).toFixed(1)}}%</span>
+                                    <round-progress
+                                      [current]="this.hachathon/this.total*100"
+                                      [max]="100"
+                                      [color]="'#6bbdcc'"
+                                      [background]="'#f0f0f0'"
+                                      [radius]="62"
+                                      [stroke]="6"
+                                      [semicircle]="false"
+                                      [rounded]="true"
+                                      [clockwise]="false"
+                                      [responsive]="true"
+                                      [duration]="1400"
+                                      [animation]="'easeInOutQuart'"
+                                      [animationDelay]="0"></round-progress>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-success border-success card">
+                      <div class="widget-chat-wrapper-outer">
+                        <div class="widget-chart-content">
+                          <div class="widget-title opacity-5 text-uppercase">General Event</div>
+                          <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                            <div class="widget-chart-flex align-items-center">
+                              <div>
+                                {{this.general_events}}
+                                <!-- {{this.general_events}} -->
+                                
+                              </div>
+                              <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                                <div class="progress-circle-wrapper">
+                                  <div class="round-progress-text">
+                                    <span>{{(this.general_events/this.total*100).toFixed(1)}}%</span>
+                                    <round-progress
+                                      [current]="this.general_events/this.total*100"
+                                      [max]="100"
+                                      [color]="'#aacc3e'"
+                                      [background]="'#f0f0f0'"
+                                      [radius]="62"
+                                      [stroke]="6"
+                                      [semicircle]="false"
+                                      [rounded]="true"
+                                      [clockwise]="false"
+                                      [responsive]="true"
+                                      [duration]="1400"
+                                      [animation]="'easeInOutQuart'"
+                                      [animationDelay]="0"></round-progress>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+              </div>
+          </div>
+    </div>
+
+</div>
+

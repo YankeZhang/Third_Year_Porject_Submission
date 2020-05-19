@@ -1,0 +1,19 @@
+45,d,YANKE,ZHANG,IC,denied,Student,7410368438,2020-04-23,2020-04-22 02:00:00,2020-04-22 03:00:00,100,Lecture,ML,41 Woodhall,Robert Street,undefined,NW1 3JP,London,London,Yanke Zhang
+46,d,YANKE,ZHANG,SOAS,confirmed,Student,7410368438,2020-04-29,2020-04-29 01:00:00,2020-04-29 05:00:00,100,Lecture,ML,41 Woodhall,Robert Street,undefined,NW1 3JP,London,London,Yanke Zhang
+47,d,YANKE,ZHANG,IC,pending,Student,7410368438,2020-04-29,2020-04-29 01:00:00,2020-04-29 04:00:00,100,Lecture,ML,41 Woodhall,Robert Street,undefined,NW1 3JP,London,London,Not handled
+48,d,YANKE,ZHANG,University of Edinburg,pending,Student,7410368438,2020-04-29,2020-04-29 01:00:00,2020-04-29 04:00:00,100,Lecture,ML,41 Woodhall,Robert Street,ss,NW1 3JP,London,London,Not handled
+49,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-03-05,2020-03-05 01:00:00,2020-03-05 03:00:00,100,Hachathon,ML,41 Woodhall,Robert Street,ss,NW1 3JP,London,London,Not handled
+50,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-03-05,2020-03-05 01:00:00,2020-03-05 03:00:00,100,Hachathon,ML,41 Woodhall,Robert Street,ss,NW1 3JP,London,London,Not handled
+51,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-04-24,2020-04-24 01:00:00,2020-04-24 02:00:00,100,Lecture,ML,41 Woodhall,Robert Street,1000,NW1 3JP,London,London,Not handled
+52,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-04-24,2020-04-24 01:00:00,2020-04-24 02:00:00,100,Lecture,ML,41 Woodhall,Robert Street,1000,NW1 3JP,London,London,Not handled
+53,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-04-24,2020-04-24 01:00:00,2020-04-24 02:00:00,100,Lecture,ML,41 Woodhall,Robert Street,1000,NW1 3JP,London,London,Not handled
+54,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-04-24,2020-04-24 01:00:00,2020-04-24 02:00:00,100,Lecture,ML,41 Woodhall,Robert Street,1000,NW1 3JP,London,London,Not handled
+55,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-04-24,2020-04-24 01:01:00,2020-04-24 02:02:00,100,General Event,ML,41 Woodhall,Robert Street,ss,NW1 3JP,London,London,Not handled
+56,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-04-24,2020-04-24 01:01:00,2020-04-24 02:02:00,100,General Event,ML,41 Woodhall,Robert Street,ss,NW1 3JP,London,London,Not handled
+57,d,YANKE,ZHANG,UAL,pending,Student,7410368438,2020-01-11,2020-01-11 01:01:00,2020-01-11 02:02:00,100,General Event,ML,41 Woodhall,Robert Street,1000,NW1 3JP,London,London,Not handled
+58,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-05-06,2020-05-06 01:01:00,2020-05-06 02:02:00,100,Student Support,ML,41 Woodhall,Robert Street,1000,NW1 3JP,London,London,Not handled
+59,d,YANKE,ZHANG,UAL,pending,Student,7410368438,2020-01-11,2020-01-11 01:01:00,2020-01-11 02:02:00,100,General Event,ML,41 Woodhall,Robert Street,1000,NW1 3JP,London,London,Not handled
+60,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-05-06,2020-05-06 01:01:00,2020-05-06 02:02:00,100,Student Support,ML,41 Woodhall,Robert Street,1000,NW1 3JP,London,London,Not handled
+61,d,YANKE,ZHANG,UCL,pending,Student,7410368438,2020-01-11,2020-01-11 01:01:00,2020-01-11 02:02:00,100,Student Support,ML,41 Woodhall,Robert Street,ss,NW1 3JP,London,London,Not handled
+62,testtest@ic.ac.uk,James,Hunter,IC,pending,student,7410368438,2020-05-15,2020-05-15 01:01:00,2020-05-15 02:02:00,124,Hachathon,ML,41 Woodhall,Robert Street,ss,NW1 3JP,London,London,Not handled
+63,testtest@ic.ac.uk,James,Hunter,IC,pending,student,7410368438,2020-05-15,2020-05-15 01:01:00,2020-05-15 02:02:00,124,Hachathon,ML,41 Woodhall,Robert Street,ss,NW1 3JP,London,London,Not handled

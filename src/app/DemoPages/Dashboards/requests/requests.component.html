@@ -1,0 +1,102 @@
+<div class="card mb-3">
+  <div class="card-header-tab card-header">
+    <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+      <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i>
+      Requests
+    </div>
+    
+  </div>
+  <form>
+    <div class="p-2">
+      <div class="form-group form-inline mb-0">
+        
+        <input class="form-control ml-2" type="text" name="searchTerm" placeholder="Search..." [(ngModel)]="service.searchTerm"/>
+        <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span>
+        <div class="btn-actions-pane-right">
+      
+            <!-- <button class="btn-shadow btn btn-dark">Refresh</button> -->
+            <button type="button" class="btn-shadow d-inline-flex align-items-center btn btn-success">
+              <a routerLinkActive="active-item" routerLink="/dashboard/sticky-headers" class="vsm-link"> <fa class="mr-2" name="plus"></fa>
+                New Request
+                </a>
+              </button>
+        </div>
+      </div>
+      
+    </div>
+    <div class="card mb-3 widget-chart" *ngIf="this.isEmpty">
+      <div class="icon-wrapper rounded-circle">
+        <div class="icon-wrapper-bg bg-primary"></div>
+        <i class="lnr-cog text-primary"></i></div>
+      <div class="widget-numbers"><span></span></div>
+      <div class="widget-subheading">You have no request to view</div>
+      <div class="widget-description text-success">
+        
+        <span class="pl-1"><span></span></span></div>
+    </div>
+    <table  *ngIf="!this.isEmpty" class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col" class="text-center">ID</th>
+        <th scope="col" class="text-center" sortable="date" (sort)="onSort($event)">Date</th>
+        <th scope="col" class="text-center" sortable="name" (sort)="onSort($event)">Name</th>
+        <th scope="col" class="text-center" sortable="type" (sort)="onSort($event)">Type</th>
+        <th scope="col" class="text-center" sortable="topic" (sort)="onSort($event)">Topic</th>
+        <th scope="col" class="text-center" sortable="state" (sort)="onSort($event)">State</th>
+        
+      </tr>
+      </thead>
+      <tbody>
+
+          <tr *ngFor="let request of requests$  | async ">
+              <th scope="row" class="text-center">
+                  <a routerLinkActive="active-item" routerLink="/forms/sticky-headers" class="vsm-link"> 
+                    {{request.req_id}} </a></th>
+
+              <td class="text-center">
+                  <a routerLinkActive="active-item" [routerLink]="['/dashboard/req-detail']" [queryParams]="{id:request.req_id, username:request.username}" class="vsm-link">
+
+                      <ngb-highlight [result]="request.date" [term]="service.searchTerm"></ngb-highlight>
+                  </a>
+              </td>
+              <td class="text-center">
+                  <a routerLinkActive="active-item" [routerLink]="['/dashboard/req-detail']" [queryParams]="{id:request.req_id, username:request.username}" class="vsm-link">
+                      <ngb-highlight [result]="request.name" [term]="service.searchTerm"></ngb-highlight>
+                  </a>
+              </td>
+              
+              <td class="text-center">
+                  <a routerLinkActive="active-item" [routerLink]="['/dashboard/req-detail']" [queryParams]="{id:request.req_id, username:request.username}" class="vsm-link">
+                      <ngb-highlight [result]="request.type" [term]="service.searchTerm"></ngb-highlight>
+                  </a>
+              </td>
+
+              <td class="text-center">
+                  <a routerLinkActive="active-item" [routerLink]="['/dashboard/req-detail']" [queryParams]="{id:request.req_id, username:request.username}" class="vsm-link">
+                      <ngb-highlight [result]="request.topic" [term]="service.searchTerm"></ngb-highlight>
+                  </a>
+              </td>
+              <td class="text-center">
+                  <a routerLinkActive="active-item" [routerLink]="['/dashboard/req-detail']" [queryParams]="{id:request.req_id, username:request.username}" class="vsm-link">
+                      <ngb-highlight [result]="request.state" [term]="service.searchTerm"></ngb-highlight>
+                  </a>
+              </td>
+
+          </tr>
+
+      </tbody>
+    </table>
+    <div class="card-footer pb-0">
+      <div class="d-flex w-100 justify-content-between">
+        <ngb-pagination
+          [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+        </ngb-pagination>
+        <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+          <option [ngValue]="10">10 items per page</option>
+          <option [ngValue]="20">20 items per page</option>
+          <option [ngValue]="30">30 items per page</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>

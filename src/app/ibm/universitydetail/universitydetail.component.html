@@ -1,0 +1,108 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+
+    
+
+      <div class="row">
+        <div class="col-md-6">
+          
+          <div class="card main-card mb-3">
+            <div class="card-header">
+              Recent Requests
+            </div>
+            <div class="card-body">
+              <apx-chart
+                [series]="[
+                {
+                  name: 'Staff',
+                  type: 'column',
+                  data: this.staff_list
+                },
+                         {
+                          name: 'Request',
+                          type: 'area',
+                          data: this.req_list
+                        }
+                      ]"
+                 [chart]="{
+                        height: '350',
+                        type: 'line',
+                        stacked: false
+                      }"
+                [stroke]="{
+                        width: [0, 2, 5],
+                        curve: 'smooth'
+                      }"
+                [plotOptions]="{
+                        bar: {
+                          columnWidth: '50%'
+                        }
+                      }"
+                [fill]="{
+                        opacity: [1, 0.25],
+                        gradient: {
+                          inverseColors: false,
+                          shade: 'light',
+                          type: 'vertical',
+                          opacityFrom: 0.85,
+                          opacityTo: 0.55,
+                          stops: [0, 100, 100, 100]
+                          }
+                      }"
+      
+                [labels]=this.date_list
+      
+                [xaxis]="{
+                        type: 'datetime'
+                      }"
+                [yaxis]="{
+                        title: {
+                          text: 'Number'
+                        },
+                        min: 0
+                      }"
+      
+              ></apx-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card main-card mb-3">
+            <div class="card-header">
+              Event Type
+            </div>
+            <div class="card-body">
+                <apx-chart
+                [series]=this.number_list
+                [labels]=this.type_list
+                [chart]="{
+                  height: '350',
+                  type: 'pie'
+                }"
+              ></apx-chart>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <ibm-uni-app-requests></ibm-uni-app-requests>
+          
+    <!-- <ngb-tabset class="tabs-animated tabs-animated-shadow">
+      <ngb-tab>
+        <ng-template ngbTabTitle><span>Request</span></ng-template>
+        <ng-template ngbTabContent>
+            
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle><span>Staff</span></ng-template>
+        <ng-template ngbTabContent>
+            <app-staff></app-staff>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+     -->
+
+
+

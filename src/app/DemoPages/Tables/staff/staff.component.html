@@ -1,0 +1,73 @@
+<div class="card mb-3">
+  <div class="card-header-tab card-header">
+    <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+      <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i>
+      Staff
+    </div>
+    <div class="btn-actions-pane-right">
+      
+        <button class="btn-shadow btn btn-dark">Refresh</button>
+        
+    </div>
+  </div>
+  <form>
+    <div class="p-2">
+      <div class="form-group form-inline mb-0">
+        Full text search:
+        <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="service.searchTerm"/>
+        <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col" class="text-center">id</th>
+        <th scope="col" sortable="name" (sort)="onSort($event)">Name</th>
+        <th scope="col" sortable="university" (sort)="onSort($event)">University</th>
+        <th scope="col" sortable="job_title" (sort)="onSort($event)">Job title</th>
+        <th scope="col" sortable="email" (sort)="onSort($event)">Email</th>
+       
+        <th scope="col" sortable="phone" (sort)="onSort($event)">Phone</th>
+       
+        <th scope="col" sortable="total" (sort)="onSort($event)">Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let staff of staffs$ | async">
+        <th scope="row" class="text-center">{{ staff.id }}</th>
+        <td>
+          <ngb-highlight [result]="staff.name" [term]="service.searchTerm"></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="staff.university" [term]="service.searchTerm"></ngb-highlight>
+        </td>
+        <td>
+            <ngb-highlight [result]="staff.job_title" [term]="service.searchTerm"></ngb-highlight>
+        </td>
+        <td>
+            <ngb-highlight [result]="staff.email" [term]="service.searchTerm"></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="staff.phone" [term]="service.searchTerm"></ngb-highlight>
+      </td>
+        <td>
+            <ngb-highlight [result]="staff.total" [term]="service.searchTerm"></ngb-highlight>
+        </td>
+      
+      </tr>
+      </tbody>
+    </table>
+    <div class="card-footer pb-0">
+      <div class="d-flex w-100 justify-content-between">
+        <ngb-pagination
+          [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+        </ngb-pagination>
+        <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+          <option [ngValue]="2">2 items per page</option>
+          <option [ngValue]="4">4 items per page</option>
+          <option [ngValue]="6">6 items per page</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>

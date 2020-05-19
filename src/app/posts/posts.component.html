@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let req of request">
+      <th scope="row">{{req.req_id}}</th>
+      <td>{{req.date}}</td>
+      <td>{{req.name}}</td>
+      <td>{{req.university}}</td>
+      <td>{{req.type}}</td>
+      <td>{{req.topic}}</td>
+      <td>{{req.state}}</td>
+    </tr>
+  </tbody>
+</table>

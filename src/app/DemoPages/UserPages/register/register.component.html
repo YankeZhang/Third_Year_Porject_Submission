@@ -1,0 +1,154 @@
+<div class="h-100">
+  <div class="row h-100 no-gutters">
+    <div class="d-none d-lg-block col-lg-4">
+      <div class="slider-light">
+        <ngx-slick-carousel class="slick-slider slick-dotted" #slickModal="slick-carousel"
+                            [config]="slideConfig2">
+          <div ngxSlickItem>
+            <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-plum-plate">
+              <div class="slide-img-bg"></div>
+              <div class="slider-content text-light"><h3>Data Visualisation</h3>
+                <p>
+                  With IBM UK University Relation Management System, People can communicate and work together with richly formatted charts, tables, chalendar, maps, and more.
+                </p></div>
+            </div>
+          </div>
+          <div ngxSlickItem>
+            <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark">
+              <div class="slide-img-bg"></div>
+              <div class="slider-content text-light"><h3>Book events with IBM</h3>
+                <p>
+                  IBM UK University Relation Management System allows you to book and track events in a handy way
+                </p></div>
+            </div>
+          </div>
+          <div ngxSlickItem>
+            <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-sunny-morning">
+              <div class="slide-img-bg opacity-6"></div>
+              <div class="slider-content text-light"><h3>Generate repots</h3>
+                <p>
+                  Generate working reports in an quick and simple way.
+                </p></div>
+            </div>
+          </div>
+        </ngx-slick-carousel>
+      </div>
+    </div>
+    <div class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-8">
+      <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
+        <div class="app-logo"></div>
+        <h4>
+          <div>Welcome,</div>
+          <span>It only takes a <span class="text-success">few seconds</span> to create your account</span></h4>
+        <div>
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+            <div  class="row">
+              <div class="col-md-12">
+                <fieldset class="form-group" id="__BVID__132">
+                  <div tabindex="-1" role="group"><label for="exampleEmail"><span class="text-danger">*</span>
+                    Email
+                  </label><input id="exampleEmail" name="email" type="email" placeholder="Email"
+                                 class="form-control" ngModel required></div>
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset class="form-group" id="__BVID__134">
+                  <div tabindex="-1" role="group"><label for="exampleName">First Name</label><input id="first_name"
+                                                                                              name="first_name" type="text"
+                                                                                              placeholder="First Name"
+                                                                                              class="form-control"
+                                                                                              ngModel
+                                                                                              required>
+                    </div>
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset class="form-group" id="__BVID__134">
+                  <div tabindex="-1" role="group"><label for="exampleName">Family Name</label><input id="family_name"
+                                                                                              name="family_name" type="text"
+                                                                                              placeholder="Family Name"
+                                                                                              class="form-control"
+                                                                                              ngModel
+                                                                                              required>
+                    </div>
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset class="form-group" id="__BVID__132">
+                  <div tabindex="-1" role="group"><label for="exampleEmail"><span class="text-danger">*</span>
+                    University
+                  </label><input id="university" name="university" type="text" placeholder="University"
+                                 class="form-control" ngModel required></div>
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset class="form-group" id="__BVID__134">
+                  <div tabindex="-1" role="group"><label for="exampleName">Department</label><input id="department"
+                                                                                              name="department" type="text"
+                                                                                              placeholder="Department"
+                                                                                              class="form-control"
+                                                                                              ngModel
+                                                                                              required>
+                    </div>
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset class="form-group" id="__BVID__132">
+                  <div tabindex="-1" role="group"><label for="exampleEmail"><span class="text-danger">*</span>
+                    Job
+                  </label><input id="exampleEmail" name="job_title" type="text" placeholder="Job title"
+                                 class="form-control" ngModel required></div>
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset class="form-group" id="__BVID__134">
+                  <div tabindex="-1" role="group"><label for="exampleName">Phone</label><input id="Phone"
+                                                                                              name="phone" type="tel"
+                                                                                              placeholder="Phone Number"
+                                                                                              class="form-control"
+                                                                                              ngModel
+                                                                                              required>
+                    </div>
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset class="form-group" id="__BVID__136">
+                  <div tabindex="-1" role="group"><label for="examplePassword"><span class="text-danger"></span>
+                    Password
+                  </label><input id="examplePassword" name="password" type="password" placeholder="Password"
+                                 class="form-control" ngModel required></div>
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset class="form-group" id="__BVID__138">
+                  <div tabindex="-1" role="group"><label for="examplePasswordRep"><span class="text-danger"></span>
+                    Repeat Password
+                  </label><input id="examplePasswordRep" name="passwordrep" type="password"
+                                 placeholder="Repeat Password" class="form-control" ngModel required></div>
+                </fieldset>
+              </div>
+            </div>
+            <div ><p *ngIf="!this.isFull" class="text-danger">
+              Please fill in all the information above
+            </p></div>
+            <div ><p *ngIf="!this.isSame && this.isFull" class="text-danger">
+              Your passwords are not the same, please type again
+            </p></div>
+            <div ><p *ngIf="!this.validEmail" class="text-danger">
+              This email is already exist! Please login or try with another email
+            </p></div>
+            <div class="mt-4 d-flex align-items-center"><h5 class="mb-0">
+              Already have an account?
+              <a [routerLink]="['/login']" class="text-primary">Sign in</a></h5>
+              <div class="ml-auto">
+                <button  (click)="onSubmit(f)" type="button"
+                        class="btn btn-wide btn-pill btn-shadow btn-hover-shine btn-secondary btn-lg">Create Account
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

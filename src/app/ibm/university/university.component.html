@@ -1,0 +1,107 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+
+    
+
+      <div class="row">
+        <div class="col-md-6">
+          
+          <div class="card main-card mb-3">
+            <div class="card-header">
+              Recent Requests
+            </div>
+            <div class="card-body">
+              <apx-chart
+                [series]="[
+                  {
+                    name: 'Request',
+                    data: this.date_req
+                  }
+                ]"
+                [xaxis]="{
+                  type: 'date',
+                  categories: this.date_list
+                }"
+                [chart]="{
+                  height: '350',
+                  type: 'line'
+                }"
+              ></apx-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card main-card mb-3">
+            <div class="card-header">
+              Universities
+            </div>
+            <div class="card-body">
+              <apx-chart
+                [series]="[
+                  {
+                    name: 'Request',
+                    data: this.uni_req
+                  }
+                ]"
+                [chart]="{
+                  height: '350',
+                  type: 'bar'
+                }"
+                [stroke]="{
+                  show: true,
+                  width: 2,
+                  colors: ['transparent']
+                }"
+                [plotOptions]="{
+                  bar: {
+                    horizontal: false,
+                    endingShape: 'rounded',
+                    columnWidth: '55%'
+                  }
+                }"
+
+                [dataLabels]="{
+                  enabled: false
+                }"
+
+                [labels]= this.uni_list
+
+                [xaxis]="{
+                  categories: this.uni_list
+                }"
+                [yaxis]="{
+                  title: {
+                    text: 'Number'
+                  }
+                }"
+
+                [fill]="{
+                  opacity: 1
+                }"
+              ></apx-chart>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+  
+    <ngb-tabset class="tabs-animated tabs-animated-shadow">
+      <ngb-tab>
+        <ng-template ngbTabTitle><span>University</span></ng-template>
+        <ng-template ngbTabContent>
+            <app-dynamic></app-dynamic>
+          
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle><span>Staff</span></ng-template>
+        <ng-template ngbTabContent>
+            <app-staff></app-staff>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+    
+
+
+

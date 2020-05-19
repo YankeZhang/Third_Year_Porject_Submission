@@ -1,0 +1,149 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<div class="main-card mb-3 card">
+    <div stickyThing marginTop="60" class="card-header-lg card-header">
+        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">Book an Event</div>
+        <div class="btn-actions-pane-right">
+
+        </div>
+    </div>
+    <div class="pt-4 card-body">
+        <div class="mx-auto col-md-8">
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form form-register" novalidate>
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">State</label>
+                    <input name="state" id="state" placeholder="Pending" disabled="disabled" type="text" class="form-control" ngModel required>
+                    <div class="position-relative form-group">
+                        <label for="exampleAddress">First Name</label>
+                        <input name="first_name" id="first_name" type="Alex" class="form-control" ngModel required>
+                       
+                    </div>
+
+                </div>
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">Family Name</label>
+                    <input name="family_name" id="family_name" type="Alex" class="form-control" ngModel required>
+                
+                </div>
+
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">Job title</label>
+                    <input name="job_name" id="job_name" type="Alex" class="form-control" ngModel required>
+                </div>
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">University</label>
+                    <input name="university" id="university" type="Alex" class="form-control" ngModel required>
+                </div>
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">Phone Number</label>
+                    <input name="phone" id="phone" type="number" class="form-control" ngModel required>
+                </div>
+                <!-- <div class="position-relative form-group"><label for="exampleCustomSelectDisabled">Event Type</label><select type="select" id="exampleCustomSelectDisabled" name="customSelect" disabled="disabled"
+                                  class="custom-select">
+          <option value="">Select</option>
+          <option>Value 1</option>
+          <option>Value 2</option>
+          <option>Value 3</option>
+          <option>Value 4</option>
+          <option>Value 5</option>
+        </select></div> -->
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">Date</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model3" ngbDatepicker [footerTemplate]="footerTemplate" #d3="ngbDatepicker" ngModel required>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="d3.toggle()" type="button">
+                                <i class="fa fa-calendar"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">   
+                    <div class="col-md-6">   
+                <div class="position-relative form-group">
+                    
+                    <label for="exampleAddress">Start</label>
+                    <ngb-timepicker name="start" id="start" type="time" ngModel required></ngb-timepicker>
+                    
+                </div>
+            </div>
+            <div class="col-md-6">      
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">Duration</label>
+                    <ngb-timepicker name="time" id="time" type="time" ngModel required></ngb-timepicker>
+                </div>
+                </div>
+            </div>
+
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">Number of Participants</label>
+                    <input name="participant" id="participant" type="text" class="form-control" ngModel required>
+                </div>
+                <div class="position-relative form-group"><label for="exampleSelect">Event Type</label><select
+                    name="event_type" id="event_type" class="form-control" ngModel required>
+                    <option>Lecture</option>
+                    <option>Student Support</option>
+                    <option>Hachathon</option>
+                    <option>General Event</option>
+                  </select></div>
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">Event topic</label>
+                    <input name="topic" id="topic" type="text" class="form-control" ngModel required>
+                </div>
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">Address Line 1</label>
+                    <input name="address1" id="address1" type="Alex" class="form-control" ngModel required>
+                </div>
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">Address Line 2</label>
+                    <input name="address2" id="address2" type="Alex" class="form-control" ngModel required>
+                </div>
+                <div class="position-relative form-group">
+                    <label for="exampleAddress">Address Line 3</label>
+                    <input name="address3" id="address3" type="Alex" class="form-control" ngModel>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="position-relative form-group">
+                            <label for="exampleCity">Post code</label>
+                            <input class="form-control" id="postcode" name="postcode" type="text" ngModel required>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative form-group">
+                            <label for="exampleState">City</label>
+                            <input class="form-control" id="city" name="city" type="text" ngModel required>
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="position-relative form-group">
+                            <label for="exampleZip">Town</label>
+                            <input class="form-control" id="town" name="town" type="text" ngModel required>
+                        </div>
+                    </div>
+                    <div ><p *ngIf="!this.isFull" class="text-danger">
+                        Please fill in all the information above
+                      </p></div>
+                </div>
+                <div class="d-block text-center card-footer">
+                    <button class="mr-2 btn btn-link btn-sm"><a routerLinkActive="active-item" routerLink="/dashboard/requests" class="vsm-link"> Back</a></button>
+                    <button class="btn btn-success btn-lg" (click)="submit()">Submit</button>
+                </div>
+            </form>
+            <!-- <div class="position-relative form-group"><label for="exampleCustomMutlipleSelectDisabled">Custom Multiple
+        Select Disabled</label><select multiple="multiple" type="select" id="exampleCustomMutlipleSelectDisabled"
+                                       name="customSelect" disabled="disabled" class="custom-select">
+        <option value="">Select</option>
+        <option>Value 1</option>
+        <option>Value 2</option>
+        <option>Value 3</option>
+        <option>Value 4</option>
+        <option>Value 5</option>
+      </select></div> -->
+        </div>
+    </div>
+
+</div>
