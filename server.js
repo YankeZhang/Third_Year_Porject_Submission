@@ -16,14 +16,14 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 
 var corsOptions = {
-    origin: ['http://51.11.129.83:4200', 'http://localhost:4200'],
+    origin: ['http://51.105.27.186:4200', 'http://localhost:4200'],
     optionsSuccessStatus: 200 // 
   }
 app.use(cors(corsOptions))
 
 //database configuration
 const connection = mysql.createConnection({
-    host     : '51.11.129.83',
+    host     : '51.105.27.186',
     port     :   3306,
     user     : 'user',
     password : '123',
