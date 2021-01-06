@@ -41,7 +41,7 @@
     "angular2-text-mask": "^9.0.0",
     "animate-sass": "^0.8.2",
     "apexcharts": "^3.6.5",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "bootstrap": "4.2.1",
     "chai": "^4.2.0",
