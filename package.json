@@ -63,7 +63,7 @@
     "ionicons": "^4.5.5",
     "ionicons-npm": "^2.0.1",
     "jquery": "^3.3.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "jspdf": "^1.5.3",
     "jw-bootstrap-switch-ng2": "^2.0.5",
     "linearicons": "^1.0.1",
